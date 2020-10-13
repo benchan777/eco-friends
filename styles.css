@@ -1,0 +1,31 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 0 0 10px 0;
+}
+
+#reported-issues {
+    border: seagreen;
+    border-style: solid;
+    margin: 20px;
+    padding: 0 10px 0 10px;
+}
+
+#issue-forms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: seagreen;
+    border-style: solid;
+    margin: 20px;
+    padding: 0 10px 0 10px;
+}
