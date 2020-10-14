@@ -43,4 +43,8 @@ function addMarker(location, map) {
     const form_display = document.createElement('P')
     form_display.innerHTML = `Marker: ${map_label}<br> Location: ${location_input}<br> Time: ${time_input}<br> Issue: ${issue_input}`
     document.querySelector('#reported-issues').appendChild(form_display)
+
+    const feed_update_display = document.createElement('P')
+    feed_update_display.innerHTML = `${time_input}: A new issue has been reported in ${location_input}!`
+    document.querySelector('#feed-updates').appendChild(feed_update_display)
 }
