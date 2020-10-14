@@ -4,11 +4,13 @@ const timeInput = document.querySelector('#time-input')
 const issueInput = document.querySelector('#issue-input')
 const issueSubmit = document.querySelector('#issue-submit')
 
-const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-let labelIndex = 0;
+const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+let labelIndex = 0
 
-const labels_form = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-let labelIndexForm = 0;
+const labels_form = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+let labelIndexForm = 0
+
+let inputIndex = 0
 
 // Initialize and add the map
 function initMap() {
@@ -41,10 +43,14 @@ function addMarker(location, map) {
     const map_label = labels_form[labelIndexForm++ % labels_form.length]
 
     const form_display = document.createElement('P')
+    form_display.id = `input${inputIndex}`
+
     form_display.innerHTML = `Marker: ${map_label}<br> Location: ${location_input}<br> Time: ${time_input}<br> Issue: ${issue_input}`
     document.querySelector('#reported-issues').appendChild(form_display)
 
     const feed_update_display = document.createElement('P')
     feed_update_display.innerHTML = `${time_input}: A new issue has been reported in ${location_input}!`
     document.querySelector('#feed-updates').appendChild(feed_update_display)
+
+    inputIndex++
 }
