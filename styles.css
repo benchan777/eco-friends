@@ -20,6 +20,14 @@ li {
     padding: 0 0 10px 0;
 }
 
+p {
+    margin: 0 0 10px 0;
+}
+
+button {
+    margin: 0 0 5px 0;
+}
+
 #reported-issues {
     border: seagreen;
     border-style: solid;
