@@ -13,12 +13,12 @@ let labelIndexForm = 0;
 // Initialize and add the map
 function initMap() {
     // Sets default location
-    const make_school = {lat: 37.783, lng: -122.412};
+    const default_location = {lat: 37.783, lng: -122.412};
     // Centers map on default location
     const map = new google.maps.Map(
-        document.querySelector('#map'), {zoom: 14, center: make_school})
+        document.querySelector('#map'), {zoom: 14, center: default_location})
     // Positions marker over default location
-    const marker = new google.maps.Marker({position: make_school, map: map})
+    const marker = new google.maps.Marker({position: default_location, map: map})
     // Calls addMarker function when map is clicked
     google.maps.event.addListener(map, 'click', (event) => {
         addMarker(event.latLng, map)
