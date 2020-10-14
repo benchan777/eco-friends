@@ -7,6 +7,9 @@ const issueSubmit = document.querySelector('#issue-submit')
 const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let labelIndex = 0;
 
+const labels_form = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let labelIndexForm = 0;
+
 // Initialize and add the map
 function initMap() {
     // Location of Make School
@@ -20,23 +23,9 @@ function initMap() {
     google.maps.event.addListener(map, 'click', (event) => {
         addMarker(event.latLng, map)
       })
-
-    google.maps.event.addListener(map, 'click', (event) => {
-        formSubmit()
-    })
   }
 
-function formSubmit() {
-    const location_input = locationInput.value
-    const time_input = timeInput.value
-    const issue_input = issueInput.value
-
-    const form_display = document.createElement('P')
-    form_display.innerHTML = `Location: ${location_input}<br> Time: ${time_input}<br> Issue: ${issue_input}`
-    document.querySelector('#reported-issues').appendChild(form_display)
-}
-
-// Adds a marker to the map.
+// Adds a marker to the map and records form data to Reported Issues box
 function addMarker(location, map) {
     // Add the marker at the clicked location, and add the next-available label
     // from the array of alphabetical characters.
@@ -45,4 +34,13 @@ function addMarker(location, map) {
       label: labels[labelIndex++ % labels.length],
       map: map,
     })
-  }
+
+    const location_input = locationInput.value
+    const time_input = timeInput.value
+    const issue_input = issueInput.value
+    const map_label = labels_form[labelIndexForm++ % labels_form.length]
+
+    const form_display = document.createElement('P')
+    form_display.innerHTML = `Marker: ${map_label}<br> Location: ${location_input}<br> Time: ${time_input}<br> Issue: ${issue_input}`
+    document.querySelector('#reported-issues').appendChild(form_display)
+}
