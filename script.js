@@ -1,3 +1,8 @@
+// inputs
+const locationInput = document.querySelector('#location-input')
+const timeInput = document.querySelector('#time-input')
+const issueInput = document.querySelector('#issue-input')
+
 // Initialize and add the map
 function initMap() {
     // Location of Make School
