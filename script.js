@@ -44,9 +44,13 @@ function addMarker(location, map) {
 
     const form_display = document.createElement('P')
     form_display.id = `input${inputIndex}`
+    const delete_button = document.createElement('BUTTON')
+    delete_button.id = `delete${inputIndex}`
 
     form_display.innerHTML = `Marker: ${map_label}<br> Location: ${location_input}<br> Time: ${time_input}<br> Issue: ${issue_input}`
     document.querySelector('#reported-issues').appendChild(form_display)
+    delete_button.innerHTML = `Remove`
+    document.querySelector('#reported-issues').appendChild(delete_button)
 
     const feed_update_display = document.createElement('P')
     feed_update_display.innerHTML = `${time_input}: A new issue has been reported in ${location_input}!`
