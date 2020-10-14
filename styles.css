@@ -38,6 +38,13 @@ li {
     padding: 0 10px 0 10px;
 }
 
+#feed {
+    border: seagreen;
+    border-style: solid;
+    margin: 20px;
+    padding: 0 10px 0 10px;
+}
+
 #map {
     width: 100%;
     height: 700px;
