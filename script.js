@@ -117,3 +117,12 @@ document.querySelector('body').addEventListener('click', function(event) {
     console.log(getMonth())
   }
 })
+
+function showHideNavBar() {
+  const links = document.querySelector('#navbar-links')
+  if(links.style.display === 'block') {
+    links.style.display = 'none'
+  } else {
+    links.style.display = 'block'
+  }
+}
