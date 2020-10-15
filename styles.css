@@ -3,6 +3,9 @@
     flex-direction: column;
     align-items: center;
 } */
+body {
+    margin: 0;
+}
 
 main > div {
     display: flex;
@@ -12,24 +15,26 @@ main > div {
 
 .navbar {
     overflow: hidden;
-    background-color: #333;
+    background-color: seagreen;
     position: relative;
+    display: flex;
+    align-items: flex-start;
 }
 
-.navbar #myLinks {
+#navbar-links {
     display: none;
 }
 
 .navbar a {
-    color: white;
+    color: black;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 30px;
     display: block;
 }
 
 .navbar a.menu-icon {
-    background: black;
+    background: #21653f;
     display: block;
     position: absolute;
     right: 0;
@@ -37,8 +42,8 @@ main > div {
 }
 
 .navbar a:hover {
-    background-color: sienna;
-    color: black;
+    background-color: #21653f;
+    color: white;
 }
 
 ul {
