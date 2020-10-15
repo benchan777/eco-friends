@@ -3,16 +3,29 @@
 
 <head>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Eco-friends</title>
 </head>
 
 <body>
     <main>
-        <header>
+        <div class="navbar">
+            <a href="#home" class="active">Eco-friends</a>
+            <div id="navbar-links">
+                <a href="#news">News</a>
+                <a href="#contact">Contact</a>
+                <a href="#about">About</a>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+              </a>
+        </div>
+
+        <!-- <header>
             <h1>Eco-friends</h1>
             <p>Currently under construction</p>
-        </header>
-        
+        </header> -->
+
         <div>
             <section>
                 <header id="reported-issues">
@@ -53,9 +66,9 @@
     </main>
 
     <script src="script.js"></script>
-    <script defer
+    <!-- <script defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDT0WdwSf2hDEwUoavMTkmTvpcMnNZt018&callback=initMap">
-        </script>
+        </script> -->
 </body>
 
 </html>
