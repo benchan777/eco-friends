@@ -47,6 +47,7 @@ function addMarker(location, map) {
     form_display.id = `input${inputIndex}`
     const delete_button = document.createElement('button')
     delete_button.id = `input${inputIndex}`
+    delete_button.className = '.remove-button'
 
     // Displays form input data in html page
     form_display.innerHTML = `Marker: ${map_label}<br> Location: ${location_input}<br> Time: ${time_input}<br> Issue: ${issue_input}`
@@ -63,16 +64,15 @@ function addMarker(location, map) {
     inputIndex++
 }
 
-// function deleteInput() {
-//   const element = document.querySelector('button')
-//   element.remove()
-//   console.log('test')
-// }
-
-// document.querySelector('button').addEventListener('click', deleteInput(event) {
-//   if (!event.target) { return; }
-
-//   if (event.target.matches('.remove-button')) {
-// 		event.target.closest('.todo-item').remove();
-// 	}
-// )}
+document.querySelector('body').addEventListener('click', function(event) {
+	// event.target is the clicked item
+	if (!event.target) { 
+    return
+  }
+  // Check if the event.target is a remove button
+	if (event.target.className == '.remove-button') {
+    const buttonId = event.target.closest('button').id
+    document.querySelector(`#${buttonId}`).remove()
+    document.querySelector(`#${buttonId}`).remove()
+  }
+});
