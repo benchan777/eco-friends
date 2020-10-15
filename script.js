@@ -43,10 +43,10 @@ function addMarker(location, map) {
     const map_label = labels_form[labelIndexForm++ % labels_form.length]
 
     // Creates new paragraph for form input and remove button
-    const form_display = document.createElement('P')
+    const form_display = document.createElement('p')
     form_display.id = `input${inputIndex}`
-    const delete_button = document.createElement('BUTTON')
-    delete_button.id = `delete${inputIndex}`
+    const delete_button = document.createElement('button')
+    delete_button.id = `input${inputIndex}`
 
     // Displays form input data in html page
     form_display.innerHTML = `Marker: ${map_label}<br> Location: ${location_input}<br> Time: ${time_input}<br> Issue: ${issue_input}`
@@ -62,3 +62,17 @@ function addMarker(location, map) {
     // Increments form_display and delete_button id by 1
     inputIndex++
 }
+
+// function deleteInput() {
+//   const element = document.querySelector('button')
+//   element.remove()
+//   console.log('test')
+// }
+
+// document.querySelector('button').addEventListener('click', deleteInput(event) {
+//   if (!event.target) { return; }
+
+//   if (event.target.matches('.remove-button')) {
+// 		event.target.closest('.todo-item').remove();
+// 	}
+// )}
