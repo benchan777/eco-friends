@@ -55,7 +55,11 @@ function addMarker(location, map) {
     if(hours >= 12) {
       hours_non_military = hours - 12
       hours_format = 'PM'
-      time = `${hours_non_military}:${minutes}:${seconds}${hours_format}`
+      time = `${hours_non_military}:${minutes}:${seconds} ${hours_format}`
+    }
+    if(hours == 0) {
+      hours_non_military = 12
+      time = `${hours_non_military}:${minutes}:${seconds} ${hours_format}`
     }
 
     // Creates new paragraph for form input and assigns id
@@ -75,7 +79,7 @@ function addMarker(location, map) {
 
     // Displays form input data in feeds page
     const feed_update_display = document.createElement('P')
-    feed_update_display.innerHTML = `${time_input}: A new issue has been reported in ${location_input}!`
+    feed_update_display.innerHTML = `${time}: A new issue has been reported in ${location_input}!`
     document.querySelector('#feed-updates').appendChild(feed_update_display)
 
     // Increments form_display and delete_button id by 1
