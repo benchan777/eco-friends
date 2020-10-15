@@ -11,6 +11,7 @@ const labels_form = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 let labelIndexForm = 0
 
 let inputIndex = 0
+let markers = []
 
 // Initialize and add the map
 function initMap() {
@@ -31,11 +32,12 @@ function initMap() {
 function addMarker(location, map) {
     // Add the marker at the clicked location, and add the next-available label
     // from the array of alphabetical characters.
-    new google.maps.Marker({
+    const marker = new google.maps.Marker({
       position: location,
       label: labels[labelIndex++ % labels.length],
       map: map,
     })
+    markers.push(marker)
 
     const location_input = locationInput.value
     const time_input = timeInput.value
@@ -74,5 +76,6 @@ document.querySelector('body').addEventListener('click', function(event) {
     const buttonId = event.target.closest('button').id
     document.querySelector(`#${buttonId}`).remove()
     document.querySelector(`#${buttonId}`).remove()
+    markers[parseInt(buttonId.replace('input', ''))].setMap(null)
   }
 });
