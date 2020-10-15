@@ -65,13 +65,16 @@ function addMarker(location, map) {
       hours_non_military = 12
       time = `${hours_non_military}:${minutes}:${seconds} ${hours_format}`
     }
+    if(seconds < 10) {
+      let seconds_leading_zero = "0" + seconds
+      time = `${hours_non_military}:${minutes}:${seconds_leading_zero} ${hours_format}`
+    }
 
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     const date_1 = date.getDate()
     const month = months[date.getMonth()]
     const year = date.getFullYear()
     let date_now = `${date_1} ${month} ${year}`
-    console.log(date_now)
 
     // Creates new paragraph for form input and assigns id
     const form_display = document.createElement('p')
@@ -82,7 +85,7 @@ function addMarker(location, map) {
     delete_button.className = '.remove-button'
 
     // Displays form input data in html page
-    form_display.innerHTML = `Marker: ${map_label}<br> Location: ${location_input}<br> Time: ${time}<br> Issue: ${issue_input}`
+    form_display.innerHTML = `Marker: ${map_label}<br> Date: ${date_now}<br> Time: ${time}<br> Location: ${location_input}<br> Issue: ${issue_input}`
     document.querySelector('#reported-issues').appendChild(form_display)
     // Adds a name to the created button
     delete_button.innerHTML = `Remove`
