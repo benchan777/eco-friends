@@ -4,9 +4,11 @@ const timeInput = document.querySelector('#time-input')
 const issueInput = document.querySelector('#issue-input')
 const issueSubmit = document.querySelector('#issue-submit')
 
+// Map pin markers
 const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 let labelIndex = 0
 
+// Corresponding form input markers
 const labels_form = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 let labelIndexForm = 0
 
@@ -44,9 +46,10 @@ function addMarker(location, map) {
     const issue_input = issueInput.value
     const map_label = labels_form[labelIndexForm++ % labels_form.length]
 
-    // Creates new paragraph for form input and remove button
+    // Creates new paragraph for form input and assigns id
     const form_display = document.createElement('p')
     form_display.id = `input${inputIndex}`
+    // Creates new button and assigns id and class
     const delete_button = document.createElement('button')
     delete_button.id = `input${inputIndex}`
     delete_button.className = '.remove-button'
@@ -54,6 +57,7 @@ function addMarker(location, map) {
     // Displays form input data in html page
     form_display.innerHTML = `Marker: ${map_label}<br> Location: ${location_input}<br> Time: ${time_input}<br> Issue: ${issue_input}`
     document.querySelector('#reported-issues').appendChild(form_display)
+    // Adds a name to the created button
     delete_button.innerHTML = `Remove`
     document.querySelector('#reported-issues').appendChild(delete_button)
 
@@ -73,9 +77,12 @@ document.querySelector('body').addEventListener('click', function(event) {
   }
   // Check if the event.target is a remove button
 	if (event.target.className == '.remove-button') {
+    // Retrives id of the clicked button
     const buttonId = event.target.closest('button').id
+    // Removes button and corresponding paragraph that contains input data
     document.querySelector(`#${buttonId}`).remove()
     document.querySelector(`#${buttonId}`).remove()
+    // Removes map marker
     markers[parseInt(buttonId.replace('input', ''))].setMap(null)
   }
 });
