@@ -27,7 +27,7 @@ function initMap() {
     google.maps.event.addListener(map, 'click', (event) => {
         addMarker(event.latLng, map)
       })
-  }
+}
 
 // Adds a marker to the map and records form data to Reported Issues box
 function addMarker(location, map) {
@@ -51,9 +51,13 @@ function addMarker(location, map) {
     const seconds = date.getSeconds()
     let hours_format = "AM"
     let hours_non_military = hours
-    let time = ''
-    if(hours >= 12) {
+    let time = `${hours_non_military}:${minutes}:${seconds} ${hours_format}`
+    if(hours > 12) {
       hours_non_military = hours - 12
+      hours_format = 'PM'
+      time = `${hours_non_military}:${minutes}:${seconds} ${hours_format}`
+    }
+    if(hours == 12) {
       hours_format = 'PM'
       time = `${hours_non_military}:${minutes}:${seconds} ${hours_format}`
     }
