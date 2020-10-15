@@ -85,4 +85,4 @@ document.querySelector('body').addEventListener('click', function(event) {
     // Removes map marker
     markers[parseInt(buttonId.replace('input', ''))].setMap(null)
   }
-});
+})
