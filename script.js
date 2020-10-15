@@ -1,6 +1,5 @@
 // inputs
 const locationInput = document.querySelector('#location-input')
-const timeInput = document.querySelector('#time-input')
 const issueInput = document.querySelector('#issue-input')
 const issueSubmit = document.querySelector('#issue-submit')
 
@@ -42,10 +41,10 @@ function addMarker(location, map) {
     markers.push(marker)
 
     const location_input = locationInput.value
-    const time_input = timeInput.value
     const issue_input = issueInput.value
     const map_label = labels_form[labelIndexForm++ % labels_form.length]
 
+    // Get current time and convert from 24 hours to AM/PM
     const date = new Date()
     const hours = date.getHours()
     const minutes = date.getMinutes()
@@ -57,7 +56,6 @@ function addMarker(location, map) {
       hours_non_military = hours - 12
       hours_format = 'PM'
       time = `${hours_non_military}:${minutes}:${seconds}${hours_format}`
-      console.log(time)
     }
 
     // Creates new paragraph for form input and assigns id
@@ -69,7 +67,7 @@ function addMarker(location, map) {
     delete_button.className = '.remove-button'
 
     // Displays form input data in html page
-    form_display.innerHTML = `Marker: ${map_label}<br> Location: ${location_input}<br> Time: ${time_input}<br> Issue: ${issue_input}`
+    form_display.innerHTML = `Marker: ${map_label}<br> Location: ${location_input}<br> Time: ${time}<br> Issue: ${issue_input}`
     document.querySelector('#reported-issues').appendChild(form_display)
     // Adds a name to the created button
     delete_button.innerHTML = `Remove`
