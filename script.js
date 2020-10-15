@@ -66,6 +66,13 @@ function addMarker(location, map) {
       time = `${hours_non_military}:${minutes}:${seconds} ${hours_format}`
     }
 
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    const date_1 = date.getDate()
+    const month = months[date.getMonth()]
+    const year = date.getFullYear()
+    let date_now = `${date_1} ${month} ${year}`
+    console.log(date_now)
+
     // Creates new paragraph for form input and assigns id
     const form_display = document.createElement('p')
     form_display.id = `input${inputIndex}`
