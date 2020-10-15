@@ -46,6 +46,20 @@ function addMarker(location, map) {
     const issue_input = issueInput.value
     const map_label = labels_form[labelIndexForm++ % labels_form.length]
 
+    const date = new Date()
+    const hours = date.getHours()
+    const minutes = date.getMinutes()
+    const seconds = date.getSeconds()
+    let hours_format = "AM"
+    let hours_non_military = hours
+    let time = ''
+    if(hours >= 12) {
+      hours_non_military = hours - 12
+      hours_format = 'PM'
+      time = `${hours_non_military}:${minutes}:${seconds}${hours_format}`
+      console.log(time)
+    }
+
     // Creates new paragraph for form input and assigns id
     const form_display = document.createElement('p')
     form_display.id = `input${inputIndex}`
@@ -84,5 +98,6 @@ document.querySelector('body').addEventListener('click', function(event) {
     document.querySelector(`#${buttonId}`).remove()
     // Removes map marker
     markers[parseInt(buttonId.replace('input', ''))].setMap(null)
+    console.log(getMonth())
   }
 })
