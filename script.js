@@ -118,6 +118,7 @@ document.querySelector('body').addEventListener('click', function(event) {
   }
 })
 
+// Toggles visibility of the nav bar
 function showHideNavBar() {
   const links = document.querySelector('#navbar-links')
   if(links.style.display === 'block') {
