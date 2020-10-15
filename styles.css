@@ -10,6 +10,37 @@ main > div {
     align-items: center;
 }
 
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+}
+
+.navbar #myLinks {
+    display: none;
+}
+
+.navbar a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+
+.navbar a.menu-icon {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.navbar a:hover {
+    background-color: sienna;
+    color: black;
+}
+
 ul {
     list-style: none;
     padding: 0;
