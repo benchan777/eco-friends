@@ -13,6 +13,7 @@ main > div {
     align-items: center;
 }
 
+/* Styles the nav bar */
 .navbar {
     overflow: hidden;
     background-color: seagreen;
@@ -21,10 +22,12 @@ main > div {
     align-items: flex-start;
 }
 
+/* Hides navbar links except for home button */
 #navbar-links {
     display: none;
 }
 
+/* Styles nav bar links */
 .navbar a {
     color: black;
     padding: 14px 16px;
@@ -33,6 +36,7 @@ main > div {
     display: block;
 }
 
+/* Styles hamburger icon */
 .navbar a.menu-icon {
     background: #21653f;
     display: block;
@@ -41,11 +45,13 @@ main > div {
     top: 0;
 }
 
+/* Styles link when hovered over */
 .navbar a:hover {
     background-color: #21653f;
     color: white;
 }
 
+/* Removes default list styles */
 ul {
     list-style: none;
     padding: 0;
