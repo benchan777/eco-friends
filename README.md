@@ -5,4 +5,6 @@ As of right now, only the input forms and map pin drop feature works. The abilit
 
 My motivation for creating this project was to provide an easier way to record and also let others see reports of local environmental issues. Current environmental apps don't provide an easy way for users to see possible issues affecting there area. This project aims to give people access to a crowd sourced pool of information of local environmental issues.
 
-![Screenshot 1](/resources/images/site-screenshot.png "Default page without inputs")
+![Screenshot 1](/resources/images/site-screenshot-1.png "Default home page without inputs")
+
+![Screenshot 2](/resources/images/site-screenshot-2.png "Home page with info entered and 1 pin dropped")
