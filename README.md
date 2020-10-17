@@ -13,6 +13,6 @@ Default home page without inputs
 Home page with info entered and 1 pin dropped
 
 ## How to use
-1. Download the repository at https://github.com/benchan777/eco-friends.git
+1. Download the repository at https://github.com/benchan777/eco-friends/archive/main.zip
 2. Unzip the file
 3. Open the index.html file with your web browser
